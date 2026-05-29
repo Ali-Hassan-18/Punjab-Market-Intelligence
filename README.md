@@ -21,3 +21,47 @@ This project implements a strict ETL (Extract, Transform, Load) architecture:
 ```bash
 git clone <your_github_repo_url>
 cd punjab_market_intelligence
+```
+
+**2. Initialize the virtual environment**
+```bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+```
+
+**3. Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**4. DataBase Configuration**
+
+1. Install PostgreSQL on your local machine and remember your postgres user password.
+2. Copy the .env.example file and rename it to .env.
+3. Open .env and replace your_local_db_password_here with your actual password.
+
+**5. 📊 Execution Protocol**
+1. The Historical Backfill
+To initialize your local database, you must run the backfill script. This will extract historical data, clean it, and load it into your local Postgres instance.
+
+run these on the terminal after activating the virtual environment
+```bash
+python reset_db.py
+python backfill.py
+```
+
+2. Generate Exploratory Data Analysis (EDA)
+To verify the statistical integrity of the data and view the Before/After anomaly purging dashboard:
+
+```bash
+python notebooks/temporal_eda.py
+```
+3. Daily Cron Job (Pipeline Execution)
+To scrape and append today's market data to the database:
+
+```bash
+python etl_pipeline.py
+```
