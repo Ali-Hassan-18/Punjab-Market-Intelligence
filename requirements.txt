@@ -1,24 +1,25 @@
-# Data Manipulation & Math
+# Data Engineering & DB Connectors
 pandas>=2.0.0
-numpy>=1.24.0
-scipy>=1.10.0
+numpy>=1.23.0
+requests
+beautifulsoup4
+SQLAlchemy
+psycopg2-binary
+python-dotenv
 
-# Visualization & EDA Dashboards
-matplotlib>=3.7.0
-seaborn>=0.12.0
+# Classical Statistics & Baseline
+statsmodels
+pmdarima
+scikit-learn
 
-# Time Series & Statistics
-statsmodels>=0.14.0
-scikit-learn>=1.2.0
+# Advanced Forensics & EDA
+matplotlib
+seaborn
+plotly
 
-# Database & Environment Configuration
-SQLAlchemy>=2.0.0
-psycopg2-binary>=2.9.0
-python-dotenv>=1.0.0
+# Advanced Models (Comparative Analysis)
+xgboost
+torch
 
-# Web Scraping (For the AMIS Scraper)
-requests>=2.31.0
-beautifulsoup4>=4.12.0
-
-# Deep Learning (For Phase 4)
-torch>=2.0.0
+# Frontend
+streamlit
